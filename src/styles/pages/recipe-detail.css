@@ -1,0 +1,280 @@
+.recipe-detail-page {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: var(--spacing-md);
+}
+
+.back-button {
+  background: none;
+  border: none;
+  color: var(--primary);
+  font-size: 1.2rem;
+  padding: var(--spacing-md) 0;
+  margin-bottom: var(--spacing-lg);
+  cursor: pointer;
+  transition: var(--transition);
+
+  &:hover {
+    color: var(--primary-dark);
+  }
+}
+
+.recipe-header {
+  background: white;
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-lg);
+  margin-bottom: var(--spacing-lg);
+  border: 1px solid var(--border);
+
+  h1 {
+    margin: 0 0 var(--spacing-md);
+    font-size: 1.8rem;
+    color: var(--dark);
+  }
+}
+
+.recipe-meta {
+  display: flex;
+  gap: var(--spacing-md);
+  flex-wrap: wrap;
+
+  span {
+    font-size: 0.95rem;
+    color: var(--gray);
+  }
+}
+
+.safety-badges {
+  display: flex;
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-lg);
+  flex-wrap: wrap;
+
+  .badge {
+    font-size: 0.9rem;
+    padding: var(--spacing-sm) var(--spacing-md);
+    border-radius: var(--radius-md);
+    font-weight: 600;
+
+    &.gout-safe {
+      background: rgba(46, 204, 113, 0.1);
+      color: var(--primary-dark);
+    }
+
+    &.diabetes-safe {
+      background: rgba(52, 152, 219, 0.1);
+      color: var(--secondary);
+    }
+
+    &.purine-level {
+      background: rgba(155, 89, 182, 0.1);
+      color: #8e44ad;
+    }
+  }
+}
+
+.recipe-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+}
+
+.section {
+  background: white;
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-lg);
+  border: 1px solid var(--border);
+
+  h3 {
+    margin: 0 0 var(--spacing-md);
+    font-size: 1.2rem;
+    color: var(--dark);
+    border-bottom: 2px solid var(--primary);
+    padding-bottom: var(--spacing-md);
+  }
+
+  p {
+    margin: 0 0 var(--spacing-md);
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .botanical {
+    font-size: 1.1rem;
+    color: var(--primary);
+    font-weight: 600;
+  }
+}
+
+.ingredients-list {
+  list-style: none;
+  padding: 0;
+
+  li {
+    padding: var(--spacing-sm) 0;
+    border-bottom: 1px solid var(--light);
+
+    &:last-child {
+      border-bottom: none;
+    }
+
+    strong {
+      color: var(--primary);
+    }
+  }
+}
+
+.instructions {
+  p {
+    margin: var(--spacing-sm) 0;
+    line-height: 1.6;
+
+    &:first-letter {
+      font-weight: 600;
+    }
+  }
+}
+
+.cooking-info {
+  display: flex;
+  gap: var(--spacing-lg);
+  margin-top: var(--spacing-md);
+  padding-top: var(--spacing-md);
+  border-top: 1px solid var(--light);
+  font-size: 0.95rem;
+}
+
+.methods,
+.parameters {
+  display: grid;
+  gap: var(--spacing-md);
+
+  p {
+    margin: 0;
+  }
+}
+
+.focus {
+  font-size: 1.1rem;
+  color: var(--primary);
+  margin-bottom: var(--spacing-md);
+}
+
+.recipe-actions {
+  display: flex;
+  gap: var(--spacing-md);
+  margin: var(--spacing-lg) 0;
+  flex-wrap: wrap;
+
+  button {
+    flex: 1;
+    min-width: 150px;
+    padding: var(--spacing-md) var(--spacing-lg);
+    border-radius: var(--radius-md);
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: var(--transition);
+  }
+
+  .favorite-button {
+    background: white;
+    border: 2px solid var(--danger);
+    color: var(--danger);
+
+    &:hover {
+      background: rgba(231, 76, 60, 0.05);
+    }
+
+    &.active {
+      background: var(--danger);
+      color: white;
+    }
+  }
+
+  .shops-button {
+    background: var(--primary);
+    color: white;
+    border: none;
+
+    &:hover {
+      background: var(--primary-dark);
+    }
+  }
+}
+
+.shops-section {
+  background: white;
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-lg);
+  border: 1px solid var(--border);
+
+  h3 {
+    margin: 0 0 var(--spacing-lg);
+    font-size: 1.2rem;
+  }
+
+  .shops-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+  }
+
+  .shop-item {
+    background: #f8f9fa;
+    padding: var(--spacing-md);
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border);
+
+    h4 {
+      margin: 0 0 var(--spacing-sm);
+      color: var(--dark);
+    }
+
+    p {
+      margin: var(--spacing-xs) 0;
+      font-size: 0.9rem;
+      color: var(--gray);
+    }
+
+    .shop-pricing {
+      display: flex;
+      gap: var(--spacing-md);
+      margin-top: var(--spacing-sm);
+      font-weight: 600;
+
+      .price {
+        color: var(--primary);
+      }
+
+      .special-price {
+        color: var(--danger);
+      }
+    }
+
+    .preparation {
+      color: var(--primary);
+      font-weight: 600;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .recipe-header h1 {
+    font-size: 1.4rem;
+  }
+
+  .recipe-actions {
+    flex-direction: column;
+
+    button {
+      width: 100%;
+    }
+  }
+
+  .cooking-info {
+    flex-direction: column;
+  }
+}
