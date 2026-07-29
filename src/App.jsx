@@ -7,6 +7,7 @@ import ShopsPage from './pages/ShopsPage'
 import FavoritesPage from './pages/FavoritesPage'
 import ProfilePage from './pages/ProfilePage'
 import RecipeDetailPage from './pages/RecipeDetailPage'
+import KosmoScoutPage from './pages/KosmoScoutPage'
 import './styles/App.css'
 
 function AppContent() {
@@ -88,6 +89,10 @@ function AppContent() {
           <Route
             path="/profile"
             element={<ProfilePage />}
+          />
+          <Route
+            path="/kosmoscout"
+            element={<KosmoScoutPage />}
           />
         </Routes>
       </main>

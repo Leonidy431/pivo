@@ -45,6 +45,15 @@ export default function Footer() {
           <span className="nav-icon">👤</span>
           <span className="nav-label">Профиль</span>
         </Link>
+
+        <Link
+          to="/kosmoscout"
+          className={`nav-item ${isActive('/kosmoscout') ? 'active' : ''}`}
+          title="KosmoScout"
+        >
+          <span className="nav-icon">🚀</span>
+          <span className="nav-label">KosmoScout</span>
+        </Link>
       </nav>
     </footer>
   )

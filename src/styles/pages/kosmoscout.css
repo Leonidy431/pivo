@@ -1,0 +1,171 @@
+.kosmoscout-page {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.kosmoscout-header {
+  text-align: center;
+  margin-bottom: 40px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 40px 20px;
+  border-radius: 10px;
+  color: white;
+}
+
+.kosmoscout-header h1 {
+  margin: 0 0 10px 0;
+  font-size: 2.5em;
+}
+
+.kosmoscout-header p {
+  margin: 0;
+  font-size: 1.1em;
+  opacity: 0.9;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.project-card {
+  background: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 20px;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.project-card:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  transform: translateY(-5px);
+}
+
+.project-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  margin-bottom: 15px;
+}
+
+.project-header h3 {
+  margin: 0;
+  color: #333;
+  font-size: 1.3em;
+  flex: 1;
+}
+
+.stars {
+  color: #ffa500;
+  font-weight: bold;
+  white-space: nowrap;
+  margin-left: 10px;
+}
+
+.description {
+  color: #666;
+  margin: 15px 0;
+  line-height: 1.5;
+}
+
+.project-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 15px;
+  padding-top: 15px;
+  border-top: 1px solid #f0f0f0;
+}
+
+.language {
+  background: #667eea;
+  color: white;
+  padding: 5px 12px;
+  border-radius: 15px;
+  font-size: 0.85em;
+}
+
+.explore-link {
+  color: #667eea;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.explore-link:hover {
+  color: #764ba2;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 60px 20px;
+  color: #999;
+}
+
+.loading {
+  text-align: center;
+  padding: 40px 20px;
+  color: #667eea;
+  font-size: 1.1em;
+}
+
+.error-message {
+  background: #ffebee;
+  color: #c62828;
+  padding: 15px;
+  border-radius: 5px;
+  margin: 20px 0;
+  text-align: center;
+}
+
+@media (prefers-color-scheme: dark) {
+  .kosmoscout-page {
+    background: #1a1a1a;
+    color: #e0e0e0;
+  }
+
+  .project-card {
+    background: #2a2a2a;
+    border-color: #444;
+  }
+
+  .project-header h3 {
+    color: #e0e0e0;
+  }
+
+  .description {
+    color: #bbb;
+  }
+
+  .explore-link {
+    color: #7e9ff7;
+  }
+
+  .explore-link:hover {
+    color: #a0b5f9;
+  }
+}
+
+@media (max-width: 768px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .kosmoscout-header h1 {
+    font-size: 1.8em;
+  }
+
+  .project-header {
+    flex-direction: column;
+    align-items: start;
+  }
+
+  .stars {
+    margin-left: 0;
+    margin-top: 10px;
+  }
+}
