@@ -1,0 +1,112 @@
+.shop-card {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-md);
+  margin-bottom: var(--spacing-md);
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+
+  &:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateX(2px);
+  }
+}
+
+.shop-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-md);
+
+  h3 {
+    margin: 0;
+    font-size: 1.1rem;
+    color: var(--dark);
+    flex: 1;
+  }
+
+  .distance {
+    background: rgba(46, 204, 113, 0.1);
+    color: var(--primary);
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-radius: var(--radius-md);
+    font-size: 0.9rem;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+}
+
+.shop-info {
+  margin-bottom: var(--spacing-md);
+
+  p {
+    margin: var(--spacing-xs) 0;
+    font-size: 0.95rem;
+    color: var(--dark);
+
+    &.address {
+      font-weight: 600;
+    }
+
+    &.city {
+      color: var(--gray);
+      font-size: 0.9rem;
+    }
+  }
+}
+
+.shop-contact {
+  margin-bottom: var(--spacing-md);
+
+  p {
+    margin: var(--spacing-xs) 0;
+    font-size: 0.9rem;
+    color: var(--secondary);
+
+    a {
+      color: var(--secondary);
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+.shop-features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-md);
+
+  .feature {
+    font-size: 0.85rem;
+    background: rgba(52, 152, 219, 0.1);
+    color: var(--secondary);
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-radius: var(--radius-md);
+    white-space: nowrap;
+  }
+}
+
+.shop-rating {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  padding-top: var(--spacing-md);
+  border-top: 1px solid var(--light);
+
+  .rating {
+    font-size: 1rem;
+    color: #f39c12;
+    font-weight: 600;
+  }
+
+  .review-count {
+    color: var(--gray);
+    font-size: 0.9rem;
+  }
+}

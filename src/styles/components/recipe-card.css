@@ -1,0 +1,99 @@
+.recipe-card {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-md);
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  &:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+  }
+}
+
+.recipe-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-md);
+
+  h3 {
+    margin: 0;
+    font-size: 1rem;
+    color: var(--dark);
+    flex: 1;
+  }
+}
+
+.favorite-btn {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: var(--transition);
+  padding: 0;
+  flex-shrink: 0;
+
+  &:hover {
+    transform: scale(1.2);
+  }
+
+  &.active {
+    color: var(--danger);
+  }
+}
+
+.recipe-info {
+  margin-bottom: var(--spacing-md);
+
+  p {
+    margin: var(--spacing-xs) 0;
+    font-size: 0.9rem;
+    color: var(--gray);
+  }
+
+  .botanical {
+    font-weight: 600;
+    color: var(--primary);
+  }
+}
+
+.recipe-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-xs);
+  margin-bottom: var(--spacing-md);
+
+  .badge {
+    font-size: 0.75rem;
+    background: rgba(46, 204, 113, 0.1);
+    color: var(--primary-dark);
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-radius: var(--radius-md);
+    white-space: nowrap;
+  }
+}
+
+.recipe-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+  padding-top: var(--spacing-md);
+  border-top: 1px solid var(--light);
+  font-size: 0.9rem;
+
+  .category {
+    color: var(--secondary);
+    font-weight: 500;
+  }
+
+  .rating {
+    color: #f39c12;
+  }
+}
