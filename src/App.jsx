@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom'
 import Header from './components/layout/Header'
 import Footer from './components/layout/Footer'
@@ -10,9 +10,16 @@ import RecipeDetailPage from './pages/RecipeDetailPage'
 import './styles/App.css'
 
 function AppContent() {
-  const [favorites, setFavorites] = useState([])
+  const [favorites, setFavorites] = useState(() => {
+    const saved = localStorage.getItem('favorites')
+    return saved ? JSON.parse(saved) : []
+  })
   const [userLocation, setUserLocation] = useState(null)
   const location = useLocation()
+
+  useEffect(() => {
+    localStorage.setItem('favorites', JSON.stringify(favorites))
+  }, [favorites])
 
   const toggleFavorite = (recipe) => {
     setFavorites(prev => {

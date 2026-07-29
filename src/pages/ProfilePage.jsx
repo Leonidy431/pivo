@@ -1,20 +1,29 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import '../styles/pages/profile.css'
 
+const DEFAULT_PROFILE = {
+  name: 'Пользователь',
+  email: 'user@example.com',
+  location: 'Москва',
+  allergens: [],
+  preferences: {
+    showGoutSafeOnly: true,
+    showDiabetesSafeOnly: true,
+    favoriteCategory: 'all',
+  },
+}
+
 export default function ProfilePage() {
-  const [profile, setProfile] = useState({
-    name: 'Пользователь',
-    email: 'user@example.com',
-    location: 'Москва',
-    allergens: [],
-    preferences: {
-      showGoutSafeOnly: true,
-      showDiabetesSafeOnly: true,
-      favoriteCategory: 'all',
-    },
+  const [profile, setProfile] = useState(() => {
+    const saved = localStorage.getItem('userProfile')
+    return saved ? JSON.parse(saved) : DEFAULT_PROFILE
   })
 
   const [editing, setEditing] = useState(false)
+
+  useEffect(() => {
+    localStorage.setItem('userProfile', JSON.stringify(profile))
+  }, [profile])
 
   const handleChange = (field, value) => {
     setProfile(prev => ({
