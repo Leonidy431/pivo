@@ -84,7 +84,12 @@ function AppContent() {
           />
           <Route
             path="/favorites"
-            element={<FavoritesPage favorites={favorites} />}
+            element={
+              <FavoritesPage
+                favorites={favorites}
+                toggleFavorite={toggleFavorite}
+              />
+            }
           />
           <Route
             path="/profile"

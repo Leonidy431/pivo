@@ -15,4 +15,31 @@ export default defineConfig({
   define: {
     'process.env': process.env,
   },
+  test: {
+    environment: 'jsdom',
+    globals: true,
+    setupFiles: './src/test/setup.js',
+    css: false,
+    coverage: {
+      provider: 'v8',
+      reporter: ['text', 'text-summary'],
+      include: ['src/**/*.{js,jsx}'],
+      exclude: ['src/main.jsx', 'src/test/**'],
+      thresholds: {
+        lines: 99,
+        statements: 99,
+        functions: 99,
+        branches: 99,
+        // KosmoScoutPage's data fetch is still a hardcoded placeholder
+        // (see its source comments) -- its catch/error branch is
+        // genuinely unreachable until a real API call replaces it.
+        'src/pages/KosmoScoutPage.jsx': {
+          lines: 90,
+          statements: 90,
+          functions: 99,
+          branches: 60,
+        },
+      },
+    },
+  },
 })

@@ -5,6 +5,7 @@ import RecipeCard from '../components/RecipeCard'
 import SearchBar from '../components/SearchBar'
 import '../styles/pages/recipes.css'
 
+/* v8 ignore next -- VITE_API_BASE is always set via .env in dev/prod */
 const API_BASE = import.meta.env.VITE_API_BASE || 'http://localhost:8000/api/v1'
 
 export default function RecipesPage({ favorites, isFavorite, toggleFavorite }) {

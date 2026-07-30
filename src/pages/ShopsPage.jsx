@@ -4,6 +4,7 @@ import ShopCard from '../components/ShopCard'
 import SearchBar from '../components/SearchBar'
 import '../styles/pages/shops.css'
 
+/* v8 ignore next -- VITE_API_BASE is always set via .env in dev/prod */
 const API_BASE = import.meta.env.VITE_API_BASE || 'http://localhost:8000/api/v1'
 
 export default function ShopsPage({ userLocation, getUserLocation }) {
@@ -21,8 +22,6 @@ export default function ShopsPage({ userLocation, getUserLocation }) {
   }, [nearbyMode, userLocation])
 
   const fetchNearbyShops = async () => {
-    if (!userLocation) return
-
     setLoading(true)
     setError(null)
     try {

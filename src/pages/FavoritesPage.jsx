@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import RecipeCard from '../components/RecipeCard'
 import '../styles/pages/favorites.css'
 
-export default function FavoritesPage({ favorites }) {
+export default function FavoritesPage({ favorites, toggleFavorite }) {
   return (
     <div className="favorites-page">
       <h2>❤️ Избранные рецепты</h2>
@@ -23,7 +23,11 @@ export default function FavoritesPage({ favorites }) {
               to={`/recipes/${recipe.id}`}
               className="recipe-link"
             >
-              <RecipeCard recipe={recipe} isFavorite={true} />
+              <RecipeCard
+                recipe={recipe}
+                isFavorite={true}
+                onToggleFavorite={() => toggleFavorite(recipe)}
+              />
             </Link>
           ))}
         </div>

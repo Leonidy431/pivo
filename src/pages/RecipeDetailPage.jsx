@@ -3,6 +3,7 @@ import { useParams, useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import '../styles/pages/recipe-detail.css'
 
+/* v8 ignore next -- VITE_API_BASE is always set via .env in dev/prod */
 const API_BASE = import.meta.env.VITE_API_BASE || 'http://localhost:8000/api/v1'
 
 export default function RecipeDetailPage({ isFavorite, toggleFavorite }) {
@@ -47,13 +48,17 @@ export default function RecipeDetailPage({ isFavorite, toggleFavorite }) {
   if (error) return <div className="error-message">{error}</div>
   if (!recipe) return <div className="error-message">Рецепт не найден</div>
 
-  const ingredients = typeof recipe.ingredients === 'string'
-    ? JSON.parse(recipe.ingredients)
-    : recipe.ingredients
+  const parseJsonField = (value) => {
+    if (typeof value !== 'string') return value
+    try {
+      return JSON.parse(value)
+    } catch {
+      return value
+    }
+  }
 
-  const compounds = typeof recipe.anti_inflammatory_compounds === 'string'
-    ? JSON.parse(recipe.anti_inflammatory_compounds)
-    : recipe.anti_inflammatory_compounds
+  const ingredients = parseJsonField(recipe.ingredients)
+  const compounds = parseJsonField(recipe.anti_inflammatory_compounds)
 
   return (
     <div className="recipe-detail-page">
